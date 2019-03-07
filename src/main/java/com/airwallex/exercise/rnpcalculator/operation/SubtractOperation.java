@@ -9,7 +9,7 @@ public class SubtractOperation extends MathOperation {
 
     private static int PARAM_COUNT = 2;
 
-    public BigDecimal calculate(BigDecimal... params) {
+    protected BigDecimal calculate(BigDecimal... params) {
         if(params.length != PARAM_COUNT) {
             throw new IllegalArgumentException("wrong params for addition operator");
         }

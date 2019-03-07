@@ -10,7 +10,7 @@ import java.util.Stack;
  */
 public abstract class MathOperation implements Operation {
 
-    abstract BigDecimal calculate(BigDecimal...params);
+    protected abstract BigDecimal calculate(BigDecimal...params);
 
     abstract int getParamCount();
 

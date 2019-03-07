@@ -2,6 +2,7 @@ package com.airwallex.exercise.rnpcalculator;
 
 import com.airwallex.exercise.rnpcalculator.exception.InsufficientParamsException;
 import com.airwallex.exercise.rnpcalculator.exception.InvalidInputException;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class Main {
             } catch (InsufficientParamsException e) {
                 System.out.println(e.getMessage());
             }
-            System.out.println(calculator.getCurrNumbersForDisplay());
+            System.out.println("stack: " + StringUtils.join(calculator.getNumbersForDisplay(), " "));
         }
     }
 }

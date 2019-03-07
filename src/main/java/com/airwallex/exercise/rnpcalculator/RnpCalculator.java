@@ -58,22 +58,16 @@ public class RnpCalculator {
         LOGGER.info("----- after calculate user input: '{}', current stack is '{}' -----", userInput, numbers);
     }
 
-    public String getCurrNumbersForDisplay(){
-        StringBuilder numbersForDisplay = new StringBuilder();
-        numbersForDisplay.append("stack: ");
+    public BigDecimal[] getNumbersForDisplay(){
         BigDecimal[] numbersArray = new BigDecimal[numbers.size()];
         numbers.toArray(numbersArray);
 
         for (int i = 0; i < numbersArray.length; i++) {
             if(numbersArray[i].scale() > 10) {
-                numbersForDisplay.append(numbersArray[i].setScale(10, BigDecimal.ROUND_DOWN));
-            } else {
-                numbersForDisplay.append(numbersArray[i]);
+                numbersArray[i] = numbersArray[i].setScale(10, BigDecimal.ROUND_DOWN);
             }
-            if(i < numbersArray.length - 1)
-                numbersForDisplay.append(" ");
         }
-        return numbersForDisplay.toString();
+        return numbersArray;
     }
 
     private void validateInput(String[] inputs) throws InvalidInputException {
