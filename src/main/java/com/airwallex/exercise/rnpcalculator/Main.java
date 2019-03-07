@@ -26,11 +26,10 @@ public class Main {
                 calculator.calculate(userInput);
             } catch (InvalidInputException e) {
                 System.out.println(e.getMessage());
-                continue;
             } catch (InsufficientParamsException e) {
                 System.out.println(e.getMessage());
             }
-            System.out.println(calculator.printRemainingNumbers());
+            System.out.println(calculator.getCurrNumbersForDisplay());
         }
     }
 }

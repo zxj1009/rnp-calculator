@@ -1,4 +1,4 @@
-package com.airwallex.exercise.rnpcalculator.operator;
+package com.airwallex.exercise.rnpcalculator.operation;
 
 /**
  * Created by xiaojzhou on 3/5/19.

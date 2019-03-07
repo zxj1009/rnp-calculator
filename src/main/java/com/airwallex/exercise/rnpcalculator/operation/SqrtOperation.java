@@ -1,11 +1,11 @@
-package com.airwallex.exercise.rnpcalculator.operator;
+package com.airwallex.exercise.rnpcalculator.operation;
 
 import java.math.BigDecimal;
 
 /**
  * Created by xiaojzhou on 3/5/19.
  */
-public class SqrtOperator implements MathOperator {
+public class SqrtOperation extends MathOperation {
 
     private static int PARAM_COUNT = 1;
 

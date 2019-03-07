@@ -1,6 +1,6 @@
 package com.airwallex.exercise.rnpcalculator.exception;
 
-import com.airwallex.exercise.rnpcalculator.operator.OperatorType;
+import com.airwallex.exercise.rnpcalculator.operation.OperatorType;
 
 /**
  * Created by xiaojzhou on 3/6/19.
@@ -9,16 +9,18 @@ public class InsufficientParamsException extends Exception {
 
     private OperatorType operatorType;
 
-    private int offset;
+    private int position;
 
-    public InsufficientParamsException(OperatorType operatorType, int offset) {
+    public InsufficientParamsException(OperatorType operatorType) {
         this.operatorType = operatorType;
-        this.offset = offset;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     @Override
     public String getMessage(){
-        return String.format("operator %s (position: %d): insufficient parameters", this.operatorType.getOpType(), this.offset);
+        return String.format("operator %s (position: %d): insufficient parameters", this.operatorType.getOpType(), this.position);
     }
-
 }
